@@ -1,5 +1,5 @@
 %define version 1.2
-%define release %mkrel 9
+%define release %mkrel 11
 %define fname id3-py
 %define oname ID3
 
