@@ -1,5 +1,5 @@
 %define version 1.2
-%define release %mkrel 14
+%define release %mkrel 15
 %define fname id3-py
 %define oname ID3
 
@@ -8,7 +8,7 @@ Version: %{version}
 Release: %{release}
 Source0: http://id3-py.sourceforge.net/%{fname}_%{version}.tar.bz2
 Summary: Python module for manipulating ID3 information tags on MP3 audio files
-License: GPL
+License: GPLv2+
 Group: Development/Python
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Url: http://id3-py.sourceforge.net
@@ -38,8 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc CHANGES COPYING README id3-tagger.py
-%py_puresitedir/ID3.py
-%py_puresitedir/ID3.pyc
+%py_puresitedir/ID3.py*
 %py_puresitedir/*.egg-info
 
 
