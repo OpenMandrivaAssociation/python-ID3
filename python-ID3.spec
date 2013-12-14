@@ -1,20 +1,17 @@
-%define version 1.2
-%define release %mkrel 17
 %define fname id3-py
-%define oname ID3
+%define oname id3
 
-Name: python-%oname
-Version: %{version}
-Release: %{release}
-Source0: http://id3-py.sourceforge.net/%{fname}_%{version}.tar.bz2
-Summary: Python module for manipulating ID3 information tags on MP3 audio files
-License: GPLv2+
-Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Url: http://id3-py.sourceforge.net
-Requires: python
-BuildRequires: python-devel >= %{pyver}
+Name:      python-%{oname}
+Version:   1.2
+Release:   18
+Source0:   http://id3-py.sourceforge.net/%{fname}_%{version}.tar.bz2
+Summary:   Python module for manipulating ID3 information tags on MP3 audio files
+License:   GPLv2+
+Group:     Development/Python
+Url:       http://id3-py.sourceforge.net
+Requires:  python
 BuildArch: noarch
+BuildRequires: python-devel
 
 %description
 This is a simple Python module for retrieving and setting so-called ID3
@@ -23,22 +20,17 @@ MP3 players generally use this simple information for display track title,
 artist name, and album title while playing the sound file.
 
 %prep
-%setup -q -n %fname-%version
+%setup -qn %{fname}-%{version}
 
 %build
-#python -c "import ID3"
 python setup.py build
-%install
-rm -rf %buildroot
-python setup.py install --root %buildroot
 
-%clean
-rm -rf $RPM_BUILD_ROOT
+%install
+python setup.py install --root %{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc CHANGES COPYING README id3-tagger.py
-%py_puresitedir/ID3.py*
-%py_puresitedir/*.egg-info
+%{py_puresitedir}/ID3.py*
+%{py_puresitedir}/*.egg-info
 
 
