@@ -3,7 +3,7 @@
 
 Name:      python-%{oname}
 Version:   1.2
-Release:   18
+Release:   19
 Source0:   http://id3-py.sourceforge.net/%{fname}_%{version}.tar.bz2
 Summary:   Python module for manipulating ID3 information tags on MP3 audio files
 License:   GPLv2+
