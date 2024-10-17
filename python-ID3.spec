@@ -8,7 +8,7 @@ Source0:   http://id3-py.sourceforge.net/%{fname}_%{version}.tar.bz2
 Summary:   Python module for manipulating ID3 information tags on MP3 audio files
 License:   GPLv2+
 Group:     Development/Python
-Url:       http://id3-py.sourceforge.net
+Url:       https://id3-py.sourceforge.net
 Requires:  python
 BuildArch: noarch
 BuildRequires: python-devel
